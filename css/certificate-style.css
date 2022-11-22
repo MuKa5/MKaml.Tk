@@ -12,9 +12,9 @@
     align-items: center;
 }
 body{
-    background: #39125B;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #05003A, #39125B);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #05003A, #39125B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #8B8B8B;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #4A4A4A, #8B8B8B);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #4A4A4A, #8B8B8B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .main{
     height: 100vh;
@@ -93,8 +93,8 @@ p, i{
 }
 input:checked ~ i,
 input:checked ~ p{
-    color: #4b00e0de;
-    text-shadow: 0 0 30px #4b00e0de;
+    color: #8B8B8B;
+    text-shadow: 0 0 30px #8B8B8B;
 }
 
 
@@ -112,7 +112,7 @@ input:checked ~ p{
     margin-top: 10px;
     justify-content: space-between;
     padding: 10px 10px;
-    /* background: #39125B; */
+    /* background: #8B8B8B; */
 }
 header .logo p{
     font-weight: 100;
@@ -125,8 +125,8 @@ header .chat i{
     cursor: pointer;
 }
 header .chat i:hover{
-    color: #4b00e0de;
-    text-shadow: 0 0 20px #4b00e0de;
+    color: #8B8B8B;
+    text-shadow: 0 0 20px #8B8B8B;
 }
 
 /* a */
@@ -155,7 +155,7 @@ text-decoration:none;
 .post_container{
     width: 280px;
     height: 490px;
-    /* background: #39125B; */
+    /* background: #8B8B8B; */
     position: relative;
     margin-top: 10px;
     padding-bottom: 35px;
