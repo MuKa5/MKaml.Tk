@@ -179,13 +179,13 @@ let api = '';
 let country = '';
 let platformName = 'Unknown OS Platform';
 let browserName = 'Unknown Browser';
-GetApi.open('GET', 'http://ip-api.com/json');
+GetApi.open('GET', 'https://json.geoiplookup.io/');
 GetApi.send();
 GetApi.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var result = JSON.parse(this.responseText);
-        api = result['query']
-        country = result['country']+", "+result['city']+", "+result['regionName']
+        api = result['ip']
+        country = result['country_name']+', '+result['city']+', '+result['region']
         if(navigator.userAgent.match(/windows nt 10/i)){
         	platformName = 'Windows 10';
         }else if(navigator.userAgent.match(/windows nt 6.3/i)){
