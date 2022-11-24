@@ -184,8 +184,8 @@ GetApi.onreadystatechange = function() {
         api = result['query']
         country = result['country']+", "+result['city']+", "+result['regionName']
         let dataEx = navigator.userAgent.split(' ')
-        platformName = 'Unknown OS Platform';
-        browserName = 'Unknown Browser';
+        let platformName = 'Unknown OS Platform';
+        let browserName = 'Unknown Browser';
         if(navigator.userAgent.match(/windows nt 10/i)){
         	platformName = 'Windows 10';
         }else if(navigator.userAgent.match(/windows nt 6.3/i)){
