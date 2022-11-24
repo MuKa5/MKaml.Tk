@@ -176,6 +176,9 @@ if (allElements.length > 0) {
 
 let GetApi = new XMLHttpRequest();
 let api = '';
+let country = '';
+let platformName = 'Unknown OS Platform';
+let browserName = 'Unknown Browser';
 GetApi.open('GET', 'http://ip-api.com/json');
 GetApi.send();
 GetApi.onreadystatechange = function() {
@@ -183,9 +186,6 @@ GetApi.onreadystatechange = function() {
         var result = JSON.parse(this.responseText);
         api = result['query']
         country = result['country']+", "+result['city']+", "+result['regionName']
-        let dataEx = navigator.userAgent.split(' ')
-        let platformName = 'Unknown OS Platform';
-        let browserName = 'Unknown Browser';
         if(navigator.userAgent.match(/windows nt 10/i)){
         	platformName = 'Windows 10';
         }else if(navigator.userAgent.match(/windows nt 6.3/i)){
